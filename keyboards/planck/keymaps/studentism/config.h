@@ -37,3 +37,13 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
+/*
+ *  fix window hold/tap timing
+ */
+#ifdef TAPPING_TERM
+   #undef TAPPING_TERM
+#endif
+#define TAPPING_TERM 200 // 200 is default
+#define PERMISSIVE_HOLD // see https://github.com/qmk/qmk_firmware/blob/master/docs/tap_hold.md#permissive-hold
+
+#define FORCE_NKRO
